@@ -17,13 +17,15 @@ const Home = () => {
     },[])
   return (
     <div>
+        <div className=" container mx-auto grid md:grid-cols-3 gap-4 ">
         {
             data.map(items =>(
-                 <div key={items.id}>
+                 <div key={items.id} >
                     <Cards {...items}/>
                  </div>
             ))
         }
+        </div>
     </div>
   )
 }

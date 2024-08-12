@@ -1,17 +1,19 @@
 import { Card } from "flowbite-react";
+import { Link } from "react-router-dom";
 
-export function Cards({title, price, img}) {
+export function Cards({id, title, price, img, description}) {
   return (
     <Card
       className="max-w-sm"
-      imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
-      imgSrc={img}
+      
     >
-      <a href="#">
-        <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+      <img src={img} alt={title}  style={{height:"250px", objectFit:"contain"}}/>
+      <Link to={`/single/${id}`}>
+        <h5 className="text-3xl font-semibold tracking-tight text-gray-900 dark:text-white">
          {title}
         </h5>
-      </a>
+      </Link>
+        <span className="text-sm text-gray-900 dark:text-white">{description}</span>
       <div className="mb-5 mt-2.5 flex items-center">
         <svg
           className="h-5 w-5 text-yellow-300"
@@ -57,6 +59,7 @@ export function Cards({title, price, img}) {
           5.0
         </span>
       </div>
+
       <div className="flex items-center justify-between">
         <span className="text-3xl font-bold text-gray-900 dark:text-white">{price}</span>
         <a
